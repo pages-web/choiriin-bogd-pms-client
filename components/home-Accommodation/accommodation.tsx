@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useQuery } from "@apollo/client";
 import { queries } from "@/sdk/graphql/cms";
+import Image from "../ui/image";
 
 export default function Rooms() {
-  const { data, loading, error } = useQuery(queries.Posts, {
+  const { data, loading, error } = useQuery(queries.PostList, {
     variables: {
       clientPortalId: process.env.NEXT_PUBLIC_CP_ID!,
       perPage: 6,
@@ -28,7 +28,6 @@ export default function Rooms() {
           {posts.map((room: any) => {
             const { _id, title, description, thumbnail } = room;
 
-            // Parse data from description string
             const priceMatch = description?.match(/price:\s*(\d+)/i);
             const ratingMatch = description?.match(/rating:\s*([\d.]+)/i);
             const reviewsMatch = description?.match(/reviews:\s*(\d+)/i);
@@ -43,9 +42,10 @@ export default function Rooms() {
                   <div className="relative h-[280px]">
                     <Image
                       src={thumbnail?.url || "/images/default-room.jpg"}
-                      fill
                       className="object-cover"
                       alt={title}
+                      width={1000}
+                      height={700}
                     />
                   </div>
                   <div className="p-6 flex flex-col justify-between flex-grow">

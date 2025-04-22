@@ -102,12 +102,34 @@ const PostList = gql`
   }
 `;
 
-import { GET_ROOMS } from "./getRooms";
-import { PmsBranchList, PmsBranchDetail } from "./otherQueries";
+const CmsTags = gql`
+  query CmsTags(
+    $clientPortalId: String!
+    $searchValue: String
+    $page: Int
+    $perPage: Int
+    $sortField: String
+    $sortDirection: String
+  ) {
+    cmsTags(
+      clientPortalId: $clientPortalId
+      searchValue: $searchValue
+      page: $page
+      perPage: $perPage
+      sortField: $sortField
+      sortDirection: $sortDirection
+    ) {
+      _id
+      clientPortalId
+      name
+      slug
+      colorCode
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 
-export const queries = {
-  Posts: GET_ROOMS,
-  PmsBranchList,
-  PmsBranchDetail,
-};
-
+const queries = { PostList, CmsTags };
+export default queries;
