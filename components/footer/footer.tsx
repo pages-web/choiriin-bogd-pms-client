@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gray-300 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-center gap-4">
+      <div className="border-t border-gray-300 mt-20 pt-3 flex flex-col md:flex-row justify-between items-center text-sm text-center gap-4">
         <p className="text-gray-500">
           &copy; 2024 Best Western Premier Tuushin Hotel
         </p>

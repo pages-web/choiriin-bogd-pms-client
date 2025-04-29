@@ -9,7 +9,7 @@ const features = [
     heading: "NAMA Restaurant",
     description:
       "Both guests and non-residents are invited to dine at Aman Le Mélézin. Please contact the team to make a reservation at Nama, the hotel's exceptional Japanese restaurant.",
-    span: "col-span-2",
+    span: "lg:col-span-2",
   },
   {
     title: "CELEBRATION",
@@ -43,23 +43,23 @@ const features = [
 
 export default function FeatureGrid() {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-12">
-      <div className="flex justify-center mb-6">
+    <section className="max-w-7xl mx-auto px-4 py-16">
+      <div className="flex justify-center mb-4">
         <button className="bg-gray-100 text-gray-800 text-xs px-4 py-1 rounded-full">
           Features
         </button>
       </div>
 
-      <h2 className="text-center text-[30px] font-semibold mb-4">
+      <h2 className="text-center text-[25px] sm:text-3xl font-semibold mb-3">
         Experience Comfort & Culture in a Modern Way
       </h2>
-      <p className="text-center text-gray-600 mb-8">
+      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10">
         Discover luxury from towering heights with a private theater production
         in our suites, a swim in the highest hotel pool in Western Europe, or
         indulge in afternoon tea with a unique Asian twist.
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((feature, index) => (
           <div
             key={index}
@@ -72,10 +72,9 @@ export default function FeatureGrid() {
               alt={feature.title}
               width={600}
               height={400}
-              className="w-full h-48 object-cover"
+              className="w-full h-52 object-cover"
             />
-
-            <div className="p-4">
+            <div className="p-5">
               <h3 className="text-sm uppercase font-bold text-gray-500">
                 {feature.title}
               </h3>

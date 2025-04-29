@@ -17,9 +17,13 @@ export default function HomePage() {
       <div className="relative overflow-hidden">
         <div className="min-h-screen flex flex-col justify-end container pt-10 pb-10 md:pb-12">
           <div className="space-y-6 md:mb-[84px]">
-            <h1 className="text-[40px] md:text-[64px] text-white">
-              Find your best staycation
+            <h1 className="text-[40px] text-center md:text-[64px] text-white">
+              FOR THOSE WHO WANTED ALL.
             </h1>
+            <p className="text-[20px] text-center  text-white">
+              Find your perfect stay with ease explore a wide range of rooms,
+              grab great deals, and book your ideal gateway today.
+            </p>
             <ReserveSelectDate />
           </div>
         </div>

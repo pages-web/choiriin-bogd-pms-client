@@ -36,3 +36,50 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 # erxes-xm-builder
 # choiriin-bogd-pms-client
+
+
+featuresData = [
+    {
+        image: "/images/test.png",
+        type: "Dining",
+        title: "Ug Inn",
+        description: "llalalalalla",
+        link: "/dining",
+    },    
+    {
+        image: "/images/test.png",
+        type: "Dining",
+        title: "Ug Inn",
+        description: "llalalalalla",
+        link: "/dining",
+    },    
+    {
+        image: "/images/test.png",
+        type: "Dining",
+        title: "Ug Inn",
+        description: "llalalalalla",
+        link: "/dining",
+    }
+]
+
+const [activeFeature, setActiveFeature] = useState(featuresData[0])
+
+<div className="relative">
+    <Image src={activeFeature.image}>
+    <div className="absolute bottom-0 left-0">
+        <h1 className="">{activeFeature.title}</h1>
+        ...
+        <Link href={activeFeature.link}>
+            <Button>View more</Button>
+        </Link>
+    </div>
+
+
+    <div className="absolute top-0 right-0 flex flex-col gap-4">
+        {featuresData.map((data) => (
+            <div className="..." onClick={() => setActiveFeature(data)}>
+                <Image src={data.image}>
+            </div>
+        ))}
+    </div>
+</div>
